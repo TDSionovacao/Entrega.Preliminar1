@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="logo-container">
+    <img src="assets/img/logo.png" alt="Logo" class="logo">
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input formControlName="senha" type="password"></ion-input>
+    </ion-item>
+
+    <!-- Botão Entrar -->
+    <ion-button expand="full" type="submit" [disabled]="!loginForm.valid" class="entrar">
+      Entrar
+    </ion-button>
+
+    <!-- Botão Cadastre-se -->
+    <ion-button expand="full" fill="outline" (click)="irParaCadastro()" class="cadastrar">
+      Cadastre-se
+    </ion-button>
+
+    <!-- Botão Login com Google -->
+    <ion-button expand="full" fill="outline" class="login-google">
+      Login com Google
+    </ion-button>
+  </form>
+</ion-content>
